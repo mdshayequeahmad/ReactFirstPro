@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList'
 import './App.css'
@@ -8,15 +8,15 @@ const App = (props) => {
 
   const addUserHandler = (uName, uAge) => {
     setUsersList((prevUserList) => {
-      return [...prevUserList, {name: uName, age: uAge, id: Math.random().toString()}]
+      return [...prevUserList, { name: uName, age: uAge, id: Math.random().toString() }]
     })
   };
 
   return (
-    <div>
+    <>
       <AddUser onAddUser={addUserHandler} />
       <UsersList users={usersList} />
-    </div>
+    </>
   )
 }
 
